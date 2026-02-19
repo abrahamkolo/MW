@@ -1,0 +1,28 @@
+name: Document Hash Verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'skills/**'
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify-hashes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verify Document Hashes
+        run: python scripts/hash-verify.py --check
+
+      - name: Cross-Reference Audit
+        run: python scripts/cross_ref_audit.py --ci
