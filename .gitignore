@@ -1,0 +1,33 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+# Secrets
+*.key
+*.pem
+*.p12
+credentials.json
+secrets.json
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Temporary
+*.tmp
+*.bak
+*.log
